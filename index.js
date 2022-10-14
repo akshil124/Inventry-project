@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express")
 const app = express()
 const bodyparser = require("body-parser") 
@@ -29,6 +30,6 @@ app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(flashmessage.flashmessage)
 app.use(routes)
-app.listen(2000,() => {
+app.listen(process.env.PORT,() => {
     console.info('server connected')
 })
