@@ -1,0 +1,11 @@
+const express = require("express")
+const routes  = express.Router()
+const usercontroller = require("../../controller/usercontroller")
+const passport = require("passport")
+const passportlocal = require('../../controller/passport-local')
+routes.post('/register',usercontroller.createuser)
+routes.post('/login',passport.authenticate('local',{failureRedirect : '/user/login',successFlash : 'success'}),usercontroller.loginuser)
+routes.get("/logout",usercontroller.logout)
+routes.get("/register",usercontroller.register)
+routes.get("/login",usercontroller.login)
+module.exports = routes;
