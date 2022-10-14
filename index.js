@@ -24,6 +24,7 @@ app.use(session({
     resave : false,
     saveUninitialized : true,
 }));
+
 // my link web url = https://inventry-manegement.herokuapp.com/user/login
 
 app.use(passport.initialize());
